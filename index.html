@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videos</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>🎬 videos</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search vedios..." oninput="handleSearch()">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-grid" id="videoGrid"></div>
+        <div class="pagination" id="pagination"></div>
+        <div class="empty-msg" id="emptyMsg" style="display:none;">no videos avaliable</div>
+    </main>
+
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-video" id="modalVideo"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-desc" id="modalDesc"></p>
+        </div>
+    </div>
+
+    <script src="app.js?v=4"></script>
+</body>
+</html>
