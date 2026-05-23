@@ -126,8 +126,8 @@ const videos = [
     // },
     {
         title: "long ago",
-        url: "https://logiflix.net/d/4ve2xhvmueun",
-        embedUrl: "https://logiflix.net/e/4ve2xhvmueun",
+        url: "https://logiflix.net/d/fj91r3smm4uha",
+        embedUrl: "https://logiflix.net/e/fj91r3smm4uha",
         thumb: "https://past.bulge.mov/i/02/00017/4ve2xhvmueun_t.jpg",
         duration: "01:02",
         date: "2026-05-23",
@@ -135,44 +135,26 @@ const videos = [
     },
     {
         title: "Ranking Funniest Hypnosis Pranks",
-        url: "https://logiflix.net/d/kr40xdocx6ot",
-        embedUrl: "https://logiflix.net/e/kr40xdocx6ot",
+        url: "https://logiflix.net/d/383dqt6p1ux9l",
+        embedUrl: "https://logiflix.net/e/383dqt6p1ux9l",
         thumb: "https://past.bulge.mov/i/02/00017/kr40xdocx6ot_t.jpg",
         duration: "01:00",
         date: "2026-05-23",
         desc: "404x720"
     },
     {
-        title: "Michael",
-        url: "https://logiflix.net/d/001iip8u7ap4",
-        embedUrl: "https://logiflix.net/e/001iip8u7ap4",
-        thumb: "https://past.bulge.mov/i/02/00017/001iip8u7ap4_t.jpg",
-        duration: "01:03",
-        date: "2026-05-23",
-        desc: "576x1024"
-    },
-    {
         title: "Ryan Daharsh & Jesse Dillard talking about wrestling",
-        url: "https://logiflix.net/d/nks78jyv08q0",
-        embedUrl: "https://logiflix.net/e/nks78jyv08q0",
+        url: "https://logiflix.net/d/9i7598x75dr2f",
+        embedUrl: "https://logiflix.net/e/9i7598x75dr2f",
         thumb: "https://past.bulge.mov/i/02/00017/nks78jyv08q0_t.jpg",
         duration: "01:23",
         date: "2026-05-23",
         desc: "404x720"
     },
     {
-        title: "for those of you who loved the video",
-        url: "https://logiflix.net/d/o7owz3cu5bls",
-        embedUrl: "https://logiflix.net/e/o7owz3cu5bls",
-        thumb: "https://past.bulge.mov/i/02/00017/o7owz3cu5bls_t.jpg",
-        duration: "01:02",
-        date: "2026-05-23",
-        desc: "576x1024"
-    },
-    {
         title: "Make Your Day",
-        url: "https://logiflix.net/d/0jfuz5neupbv",
-        embedUrl: "https://logiflix.net/e/0jfuz5neupbv",
+        url: "https://logiflix.net/d/vxxhm8vh7h0dj",
+        embedUrl: "https://logiflix.net/e/vxxhm8vh7h0dj",
         thumb: "https://past.bulge.mov/i/02/00017/0jfuz5neupbv_t.jpg",
         duration: "01:01",
         date: "2026-05-23",
@@ -302,21 +284,12 @@ function openVideo(idx) {
     titleEl.textContent = v.title;
     descEl.textContent = v.desc || '';
 
-    const url = v.url;
-
-    if (isYouTube(url)) {
-        const vid = extractYouTubeId(url);
-        videoBox.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?autoplay=1" allowfullscreen allow="autoplay"></iframe>`;
-    } else if (isBilibili(url)) {
-        const bvid = extractBilibiliId(url);
-        videoBox.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${bvid}&autoplay=1" allowfullscreen allow="autoplay"></iframe>`;
-    } else if (v.embedUrl) {
-        // upbolt.to等iframe嵌入平台
+    if (v.embedUrl) {
         videoBox.innerHTML = `<iframe src="${v.embedUrl}" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>`;
     } else {
-        // mp4/webm直链
-        videoBox.innerHTML = `<video src="${url}" controls autoplay></video>`;
+        videoBox.innerHTML = `<video src="${v.url}" controls autoplay></video>`;
     }
+
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -334,25 +307,6 @@ function closeModal(e) {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
-
-// === 视频类型检测 ===
-function isYouTube(url) {
-    return /youtube\.com|youtu\.be/.test(url);
-}
-
-function isBilibili(url) {
-    return /bilibili\.com|b23\.tv/.test(url);
-}
-
-function extractYouTubeId(url) {
-    const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
-    return m ? m[1] : '';
-}
-
-function extractBilibiliId(url) {
-    const m = url.match(/(?:bilibili\.com\/video\/|b23\.tv\/)(BV[\w]+)/i);
-    return m ? m[1] : '';
-}
 
 // === 工具 ===
 function escHtml(s) {
