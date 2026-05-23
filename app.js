@@ -7,122 +7,176 @@ const PER_PAGE = 12;
 // url 支持：mp4直链、YouTube、B站
 // embedUrl: iframe嵌入地址
 const videos = [
+    // {
+    //     title: "City Night Vibe",
+    //     url: "https://upbolt.to/k5qwgw3eovvt",
+    //     embedUrl: "https://upbolt.to/e/k5qwgw3eovvt",
+    //     thumb: "https://i.upbolt.to/k5qwgw3eovvt_t.jpg",
+    //     duration: "01:00",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Golden Hour Escape",
+    //     url: "https://upbolt.to/oggxlj9697hk",
+    //     embedUrl: "https://upbolt.to/e/oggxlj9697hk",
+    //     thumb: "https://i.upbolt.to/oggxlj9697hk_t.jpg",
+    //     duration: "01:46",
+    //     date: "2026-05-23",
+    //     desc: "852x480"
+    // },
+    // {
+    //     title: "Hidden Mountain Valley",
+    //     url: "https://upbolt.to/327br53rlgeu",
+    //     embedUrl: "https://upbolt.to/e/327br53rlgeu",
+    //     thumb: "https://i.upbolt.to/327br53rlgeu_t.jpg",
+    //     duration: "01:03",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Morning Coffee Moments",
+    //     url: "https://upbolt.to/rlizfpao3oo9",
+    //     embedUrl: "https://upbolt.to/e/rlizfpao3oo9",
+    //     thumb: "https://i.upbolt.to/rlizfpao3oo9_t.jpg",
+    //     duration: "01:00",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Ocean Wave Serenity",
+    //     url: "https://upbolt.to/wkqjo2sapz39",
+    //     embedUrl: "https://upbolt.to/e/wkqjo2sapz39",
+    //     thumb: "https://i.upbolt.to/wkqjo2sapz39_t.jpg",
+    //     duration: "00:36",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Quiet Lakeside Calm",
+    //     url: "https://upbolt.to/37jr2o8h8ytz",
+    //     embedUrl: "https://upbolt.to/e/37jr2o8h8ytz",
+    //     thumb: "https://i.upbolt.to/37jr2o8h8ytz_t.jpg",
+    //     duration: "01:01",
+    //     date: "2026-05-13",
+    //     desc: "360x480"
+    // },
+    // {
+    //     title: "Ryan Daharsh & Jesse Dillard talking about wrestling",
+    //     url: "https://upbolt.to/cxh3ujp3iv53",
+    //     embedUrl: "https://upbolt.to/e/cxh3ujp3iv53",
+    //     thumb: "https://i.upbolt.to/cxh3ujp3iv53_t.jpg",
+    //     duration: "01:23",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Starry Sky Adventure",
+    //     url: "https://upbolt.to/wudelxm54kaa",
+    //     embedUrl: "https://upbolt.to/e/wudelxm54kaa",
+    //     thumb: "https://i.upbolt.to/wudelxm54kaa_t.jpg",
+    //     duration: "02:48",
+    //     date: "2026-05-23",
+    //     desc: "640x480"
+    // },
+    // {
+    //     title: "Street Light Stories",
+    //     url: "https://upbolt.to/61p1rbzw69n3",
+    //     embedUrl: "https://upbolt.to/e/61p1rbzw69n3",
+    //     thumb: "https://i.upbolt.to/61p1rbzw69n3_t.jpg",
+    //     duration: "01:23",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Sunset Road Journey",
+    //     url: "https://upbolt.to/709lg6xgncpe",
+    //     embedUrl: "https://upbolt.to/e/709lg6xgncpe",
+    //     thumb: "https://i.upbolt.to/709lg6xgncpe_t.jpg",
+    //     duration: "01:07",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
+    // {
+    //     title: "Tiny World Discovery",
+    //     url: "https://upbolt.to/2s64c2n7134o",
+    //     embedUrl: "https://upbolt.to/e/2s64c2n7134o",
+    //     thumb: "https://i.upbolt.to/2s64c2n7134o_t.jpg",
+    //     duration: "03:02",
+    //     date: "2026-05-23",
+    //     desc: "852x480"
+    // },
+    // {
+    //     title: "Whisper of The Forest",
+    //     url: "https://upbolt.to/sjw3ei3yeo7x",
+    //     embedUrl: "https://upbolt.to/e/sjw3ei3yeo7x",
+    //     thumb: "https://i.upbolt.to/sjw3ei3yeo7x_t.jpg",
+    //     duration: "02:05",
+    //     date: "2026-05-23",
+    //     desc: "480x480"
+    // },
+    // {
+    //     title: "Wind Through The Leaves",
+    //     url: "https://upbolt.to/vok1wis8uqpw",
+    //     embedUrl: "https://upbolt.to/e/vok1wis8uqpw",
+    //     thumb: "https://i.upbolt.to/vok1wis8uqpw_t.jpg",
+    //     duration: "01:00",
+    //     date: "2026-05-23",
+    //     desc: "272x480"
+    // },
     {
-        title: "City Night Vibe",
-        url: "https://upbolt.to/k5qwgw3eovvt",
-        embedUrl: "https://upbolt.to/e/k5qwgw3eovvt",
-        thumb: "https://i.upbolt.to/k5qwgw3eovvt_t.jpg",
+        title: "long ago",
+        url: "https://logiflix.net/d/4ve2xhvmueun",
+        embedUrl: "https://logiflix.net/e/4ve2xhvmueun",
+        thumb: "https://past.bulge.mov/i/02/00017/4ve2xhvmueun_t.jpg",
+        duration: "01:02",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
+        title: "Ranking Funniest Hypnosis Pranks",
+        url: "https://logiflix.net/d/kr40xdocx6ot",
+        embedUrl: "https://logiflix.net/e/kr40xdocx6ot",
+        thumb: "https://past.bulge.mov/i/02/00017/kr40xdocx6ot_t.jpg",
         duration: "01:00",
         date: "2026-05-23",
-        desc: "272x480"
+        desc: "404x720"
     },
     {
-        title: "Golden Hour Escape",
-        url: "https://upbolt.to/oggxlj9697hk",
-        embedUrl: "https://upbolt.to/e/oggxlj9697hk",
-        thumb: "https://i.upbolt.to/oggxlj9697hk_t.jpg",
-        duration: "01:46",
-        date: "2026-05-23",
-        desc: "852x480"
-    },
-    {
-        title: "Hidden Mountain Valley",
-        url: "https://upbolt.to/327br53rlgeu",
-        embedUrl: "https://upbolt.to/e/327br53rlgeu",
-        thumb: "https://i.upbolt.to/327br53rlgeu_t.jpg",
+        title: "Michael",
+        url: "https://logiflix.net/d/001iip8u7ap4",
+        embedUrl: "https://logiflix.net/e/001iip8u7ap4",
+        thumb: "https://past.bulge.mov/i/02/00017/001iip8u7ap4_t.jpg",
         duration: "01:03",
         date: "2026-05-23",
-        desc: "272x480"
-    },
-    {
-        title: "Morning Coffee Moments",
-        url: "https://upbolt.to/rlizfpao3oo9",
-        embedUrl: "https://upbolt.to/e/rlizfpao3oo9",
-        thumb: "https://i.upbolt.to/rlizfpao3oo9_t.jpg",
-        duration: "01:00",
-        date: "2026-05-23",
-        desc: "272x480"
-    },
-    {
-        title: "Ocean Wave Serenity",
-        url: "https://upbolt.to/wkqjo2sapz39",
-        embedUrl: "https://upbolt.to/e/wkqjo2sapz39",
-        thumb: "https://i.upbolt.to/wkqjo2sapz39_t.jpg",
-        duration: "00:36",
-        date: "2026-05-23",
-        desc: "272x480"
-    },
-    {
-        title: "Quiet Lakeside Calm",
-        url: "https://upbolt.to/37jr2o8h8ytz",
-        embedUrl: "https://upbolt.to/e/37jr2o8h8ytz",
-        thumb: "https://i.upbolt.to/37jr2o8h8ytz_t.jpg",
-        duration: "01:01",
-        date: "2026-05-13",
-        desc: "360x480"
+        desc: "576x1024"
     },
     {
         title: "Ryan Daharsh & Jesse Dillard talking about wrestling",
-        url: "https://upbolt.to/cxh3ujp3iv53",
-        embedUrl: "https://upbolt.to/e/cxh3ujp3iv53",
-        thumb: "https://i.upbolt.to/cxh3ujp3iv53_t.jpg",
+        url: "https://logiflix.net/d/nks78jyv08q0",
+        embedUrl: "https://logiflix.net/e/nks78jyv08q0",
+        thumb: "https://past.bulge.mov/i/02/00017/nks78jyv08q0_t.jpg",
         duration: "01:23",
         date: "2026-05-23",
-        desc: "272x480"
+        desc: "404x720"
     },
     {
-        title: "Starry Sky Adventure",
-        url: "https://upbolt.to/wudelxm54kaa",
-        embedUrl: "https://upbolt.to/e/wudelxm54kaa",
-        thumb: "https://i.upbolt.to/wudelxm54kaa_t.jpg",
-        duration: "02:48",
+        title: "for those of you who loved the video",
+        url: "https://logiflix.net/d/o7owz3cu5bls",
+        embedUrl: "https://logiflix.net/e/o7owz3cu5bls",
+        thumb: "https://past.bulge.mov/i/02/00017/o7owz3cu5bls_t.jpg",
+        duration: "01:02",
         date: "2026-05-23",
-        desc: "640x480"
+        desc: "576x1024"
     },
     {
-        title: "Street Light Stories",
-        url: "https://upbolt.to/61p1rbzw69n3",
-        embedUrl: "https://upbolt.to/e/61p1rbzw69n3",
-        thumb: "https://i.upbolt.to/61p1rbzw69n3_t.jpg",
-        duration: "01:23",
+        title: "Make Your Day",
+        url: "https://logiflix.net/d/0jfuz5neupbv",
+        embedUrl: "https://logiflix.net/e/0jfuz5neupbv",
+        thumb: "https://past.bulge.mov/i/02/00017/0jfuz5neupbv_t.jpg",
+        duration: "01:01",
         date: "2026-05-23",
-        desc: "272x480"
-    },
-    {
-        title: "Sunset Road Journey",
-        url: "https://upbolt.to/709lg6xgncpe",
-        embedUrl: "https://upbolt.to/e/709lg6xgncpe",
-        thumb: "https://i.upbolt.to/709lg6xgncpe_t.jpg",
-        duration: "01:07",
-        date: "2026-05-23",
-        desc: "272x480"
-    },
-    {
-        title: "Tiny World Discovery",
-        url: "https://upbolt.to/2s64c2n7134o",
-        embedUrl: "https://upbolt.to/e/2s64c2n7134o",
-        thumb: "https://i.upbolt.to/2s64c2n7134o_t.jpg",
-        duration: "03:02",
-        date: "2026-05-23",
-        desc: "852x480"
-    },
-    {
-        title: "Whisper of The Forest",
-        url: "https://upbolt.to/sjw3ei3yeo7x",
-        embedUrl: "https://upbolt.to/e/sjw3ei3yeo7x",
-        thumb: "https://i.upbolt.to/sjw3ei3yeo7x_t.jpg",
-        duration: "02:05",
-        date: "2026-05-23",
-        desc: "480x480"
-    },
-    {
-        title: "Wind Through The Leaves",
-        url: "https://upbolt.to/vok1wis8uqpw",
-        embedUrl: "https://upbolt.to/e/vok1wis8uqpw",
-        thumb: "https://i.upbolt.to/vok1wis8uqpw_t.jpg",
-        duration: "01:00",
-        date: "2026-05-23",
-        desc: "272x480"
+        desc: "540x720"
     },
 ];
 
