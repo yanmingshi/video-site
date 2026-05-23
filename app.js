@@ -125,8 +125,62 @@ const videos = [
     //     desc: "272x480"
     // },
     {
+        title: "Misty Peak Odyssey",
+        url: "https://logiflix.net/d/z4ge2zg0odla",
+        embedUrl: "https://logiflix.net/e/gnwt1cchsrao5",
+        thumb: "https://past.bulge.mov/i/01/00017/z4ge2zg0odla_t.jpg",
+        duration: "01:04",
+        date: "2026-05-23",
+        desc: "200x360"
+    },
+    {
+        title: "Wild Wind Chronicle",
+        url: "https://logiflix.net/d/jfclbbjmgbpa",
+        embedUrl: "https://logiflix.net/e/vislsie0r7so0",
+        thumb: "https://past.bulge.mov/i/01/00017/jfclbbjmgbpa_t.jpg",
+        duration: "01:10",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
+        title: "Shadow Canyon Quest",
+        url: "https://logiflix.net/d/okuoxct481jb",
+        embedUrl: "https://logiflix.net/e/igeb3cmyvwgtq",
+        thumb: "https://past.bulge.mov/i/01/00017/okuoxct481jb_xt.jpg",
+        duration: "00:12",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
+        title: "Crystal Stream Dream",
+        url: "https://logiflix.net/d/fahpttfn266x",
+        embedUrl: "https://logiflix.net/e/wecdblm9hnrpo",
+        thumb: "https://past.bulge.mov/i/01/00017/fahpttfn266x_xt.jpg",
+        duration: "00:15",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
+        title: "Cloud Realm Adventure",
+        url: "https://logiflix.net/d/p4h4gunn0zhl",
+        embedUrl: "https://logiflix.net/e/rjt5s6d7ct026",
+        thumb: "https://past.bulge.mov/i/01/00017/p4h4gunn0zhl_t.jpg",
+        duration: "01:01",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
+        title: "This is the longest video",
+        url: "https://logiflix.net/d/3jdv2smbmb2l",
+        embedUrl: "https://logiflix.net/e/vcis7q3f0t4yg",
+        thumb: "https://past.bulge.mov/i/01/00017/3jdv2smbmb2l_t.jpg",
+        duration: "00:27",
+        date: "2026-05-23",
+        desc: "404x720"
+    },
+    {
         title: "long ago",
-        url: "https://logiflix.net/d/fj91r3smm4uha",
+        url: "https://logiflix.net/d/4ve2xhvmueun",
         embedUrl: "https://logiflix.net/e/fj91r3smm4uha",
         thumb: "https://past.bulge.mov/i/02/00017/4ve2xhvmueun_t.jpg",
         duration: "01:02",
@@ -135,7 +189,7 @@ const videos = [
     },
     {
         title: "Ranking Funniest Hypnosis Pranks",
-        url: "https://logiflix.net/d/383dqt6p1ux9l",
+        url: "https://logiflix.net/d/kr40xdocx6ot",
         embedUrl: "https://logiflix.net/e/383dqt6p1ux9l",
         thumb: "https://past.bulge.mov/i/02/00017/kr40xdocx6ot_t.jpg",
         duration: "01:00",
@@ -144,7 +198,7 @@ const videos = [
     },
     {
         title: "Ryan Daharsh & Jesse Dillard talking about wrestling",
-        url: "https://logiflix.net/d/9i7598x75dr2f",
+        url: "https://logiflix.net/d/nks78jyv08q0",
         embedUrl: "https://logiflix.net/e/9i7598x75dr2f",
         thumb: "https://past.bulge.mov/i/02/00017/nks78jyv08q0_t.jpg",
         duration: "01:23",
@@ -153,7 +207,7 @@ const videos = [
     },
     {
         title: "Make Your Day",
-        url: "https://logiflix.net/d/vxxhm8vh7h0dj",
+        url: "https://logiflix.net/d/0jfuz5neupbv",
         embedUrl: "https://logiflix.net/e/vxxhm8vh7h0dj",
         thumb: "https://past.bulge.mov/i/02/00017/0jfuz5neupbv_t.jpg",
         duration: "01:01",
@@ -229,7 +283,7 @@ function renderPage() {
     }
 
     let pagHtml = '';
-    pagHtml += `<button onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
+    pagHtml += `<button onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>Previous Page</button>`;
 
     const pages = getPageRange(currentPage, totalPages);
     pages.forEach(p => {
@@ -240,7 +294,7 @@ function renderPage() {
         }
     });
 
-    pagHtml += `<button onclick="goPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
+    pagHtml += `<button onclick="goPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next Page</button>`;
     pagHtml += `<span class="page-info">${currentPage}/${totalPages}页</span>`;
 
     pag.innerHTML = pagHtml;
